@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: SeamProject-Ejb.jar 
+ jboss-seam.jar 

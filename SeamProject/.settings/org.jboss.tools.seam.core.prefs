@@ -1,0 +1,16 @@
+action.package=org.itsector.seamproject.session
+action.sources=/SeamProject-Ejb/ejbModule
+eclipse.preferences.version=1
+model.package=org.itsector.seamproject.entity
+model.sources=/SeamProject-Ejb/ejbModule
+seam.ear.project=SeamProject-Ear
+seam.ejb.project=SeamProject-Ejb
+seam.project.connection.profile=New Generic JDBC
+seam.project.deployment.type=ear
+seam.project.settings.version=1.1
+seam.project.web.root.folder=/SeamProject/WebContent
+seam.runtime.name=jboss-seam-2.2.2.Final
+seam.test.creating=true
+seam.test.project=SeamProject-Test
+test.package=org.itsector.seamproject.test
+test.sources=/SeamProject-Test/test-src

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd">
+
+	<exception class="org.jboss.seam.security.NotLoggedInException">
+		<redirect view-id="/login.xhtml">
+			<message>É necessário efetuar login para usar esta funcionalidade.</message>
+		</redirect>
+	</exception>
+	
+	<exception class="org.jboss.seam.security.AuthorizationException">
+		<end-conversation/>
+		<redirect view-id="/error.xhtml">
+			<message>
+				Não possui privilégios suficientes para realizar esta operação.
+			</message>
+		</redirect>
+	</exception>
+     
+    <exception class="org.itsector.seamproject.exception.DAOException">
+		<end-conversation/>
+		<redirect view-id="/error.xhtml">
+			<message>
+				DAO Exception
+			</message>
+		</redirect>
+	</exception>
+	
+	<page view-id="/bemvindo.xhtml">
+		<begin-conversation join="true" pageflow="login"/>
+	</page>
+	
+	<page view-id="/login.xhtml">
+		<navigation from-action="#{identity.login}">
+			<rule if="#{identity.loggedIn}">
+				<redirect view-id="/bemvindo.xhtml"/>
+			</rule>
+		</navigation>
+	</page>
+      
+</pages>
